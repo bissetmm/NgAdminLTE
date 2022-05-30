@@ -4,15 +4,25 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SideBarComponent } from './side-bar/side-bar/side-bar.component';
+import { ContentHeaderComponent } from './content-header/content-header.component';
 
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 // import the DashboardLayoutModule for the Dashboard Layout component
 import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
+import { Dashbord1Component } from './pages/dashbord1/dashbord1.component';
+import { Dashbord2Component } from './pages/dashbord2/dashbord2.component';
+import { Dashbord3Component } from './pages/dashbord3/dashbord3.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    Dashbord1Component,
+    Dashbord2Component,
+    Dashbord3Component,
+    SideBarComponent,
+    ContentHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +32,6 @@ import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
     DashboardLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,SideBarComponent,ContentHeaderComponent]
 })
 export class AppModule { }
