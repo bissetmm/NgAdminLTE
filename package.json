@@ -1,12 +1,20 @@
 {
   "name": "syncfusion-angular-app",
   "version": "0.0.0",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:electron": "ng build --base-href ./ && tsc -p tsconfig.electron.json && electron .",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "electron:build:mac": "npm run build:electron && node_modules/.bin/electron-builder build --mac --x64",
+    "electron:build:win": "npm run build:electron && node_modules/.bin/electron-builder build --win --x64",
+    "build:electron": "npm run electron:tsc && ng build --base-href ./",
+    "electron:tsc": "tsc -p tsconfig.electron.json"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +27,7 @@
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
     "@syncfusion/ej2-angular-grids": "^20.1.57",
+    "@syncfusion/ej2-angular-layouts": "^20.1.55",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

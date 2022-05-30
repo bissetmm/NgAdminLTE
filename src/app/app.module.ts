@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { GridModule } from '@syncfusion/ej2-angular-grids';
+// import the DashboardLayoutModule for the Dashboard Layout component
+import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    GridModule
+    GridModule,
+    DashboardLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
