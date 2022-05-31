@@ -9,7 +9,11 @@ import { ContentHeaderComponent } from './content-header/content-header.componen
 
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 // import the DashboardLayoutModule for the Dashboard Layout component
+import { TextBoxModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
+import { ChartAllModule, AccumulationChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+import { MapsAllModule } from '@syncfusion/ej2-angular-maps';
+
 import { Dashbord1Component } from './pages/dashbord1/dashbord1.component';
 import { Dashbord2Component } from './pages/dashbord2/dashbord2.component';
 import { Dashbord3Component } from './pages/dashbord3/dashbord3.component';
@@ -29,7 +33,13 @@ import { Dashbord3Component } from './pages/dashbord3/dashbord3.component';
     AppRoutingModule,
     FormsModule,
     GridModule,
-    DashboardLayoutModule
+    DashboardLayoutModule,
+    ChartAllModule,
+    AccumulationChartAllModule,
+    RangeNavigatorAllModule,
+    MapsAllModule,
+    TextBoxModule,
+    NumericTextBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent,SideBarComponent,ContentHeaderComponent]

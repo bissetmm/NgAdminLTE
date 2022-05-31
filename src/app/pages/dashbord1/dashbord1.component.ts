@@ -3,7 +3,8 @@ import {
   DashboardLayoutComponent,
   PanelModel,
 } from '@syncfusion/ej2-angular-layouts';
-import panelData from '../../../panels-data';
+import panelData from '../../models/panels-data';
+import { headers } from 'src/app/models/common';
 
 @Component({
   selector: 'app-dashbord1',
