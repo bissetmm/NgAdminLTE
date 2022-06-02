@@ -4,7 +4,6 @@ import {
   PanelModel,
 } from '@syncfusion/ej2-angular-layouts';
 import panelData from '../../models/panels-data';
-import { headers } from 'src/app/models/common';
 
 @Component({
   selector: 'app-dashbord1',

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashbord3',
-  templateUrl: './dashbord3.component.html',
-  styleUrls: ['./dashbord3.component.scss']
+  selector: 'app-dashbord22',
+  templateUrl: './dashbord22.component.html',
+  styleUrls: ['./dashbord22.component.scss']
 })
-export class Dashbord3Component implements OnInit {
+export class Dashbord22Component implements OnInit {
 
   public cellSpacing: number[] = [10, 10];
   public headerCount: number = 1;

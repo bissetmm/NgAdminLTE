@@ -52,6 +52,72 @@ export class Dashbord2Component implements OnInit {
   @ViewChild('lineChart') public lineChart: ChartComponent | undefined
   @ViewChild('colchart') public colchart: ChartComponent | undefined
 
+  // public target: string = '.sidebar-content';
+  public target: string = '#target'
+  public enablesmartlabel: boolean = true
+  public startAngle: number = 0
+  public endAngle: number = 360
+  public dataLabel: Object = {
+    visible: true,
+    position: 'Inside',
+    name: 'text',
+    font: { color: 'white', fontWeight: '600', size: '14px' },
+  }
+  public palettes: any = ['#357cd2', '#00bdae', '#e36593']
+  public legendSettings: Object = {
+    visible: false,
+    toggleVisibility: false,
+    position: 'Right',
+    height: '28%',
+    width: '44%',
+  }
+  public tooltip: Object = {
+    enable: true,
+    header: '<b>${point.x}</b>',
+    format: 'Composition : <b>${point.y}%</b>',
+  }
+  public expenseData: any = [
+    {
+      UniqueId: 'T100003',
+      DateTime: new Date(1488359820000),
+      Category: 'Food',
+      PaymentMode: 'Cash',
+      TransactionType: 'Expense',
+      Description: 'Confederate cush',
+      Amount: '900',
+      MonthShort: 'Mar',
+      MonthFull: 'March, 2017',
+      FormattedDate: '03/01/2017 08:53 PM',
+      Device: 'Tablet',
+    },
+    {
+      UniqueId: 'T100004',
+      DateTime: new Date(1491038220000),
+      Category: 'Transportation',
+      PaymentMode: 'Credit Card',
+      TransactionType: 'Expense',
+      Description: 'Public and other transportation',
+      Amount: '1200',
+      MonthShort: 'Apr',
+      MonthFull: 'April, 2017',
+      FormattedDate: '04/01/2017 10:44 AM',
+      Device: 'Desktop',
+    },
+    {
+      UniqueId: 'T100005',
+      DateTime: new Date(1493630220000),
+      Category: 'Transportation',
+      PaymentMode: 'Cash',
+      TransactionType: 'Expense',
+      Description: 'Public and other transportation',
+      Amount: '600',
+      MonthShort: 'May',
+      MonthFull: 'May, 2017',
+      FormattedDate: '05/01/2017 03:25 PM',
+      Device: 'Mobile',
+    },
+  ]
+
   // Map data
   public zoomSettings: Object = { enable: false }
   public maplegendSettings: Object = { visible: false }
@@ -245,7 +311,7 @@ export class Dashbord2Component implements OnInit {
       this.pie?.initialClipRect.width,
     )
     let rect: ClientRect = this.centerTitle.getBoundingClientRect()
-    if(this.pie){
+    if (this.pie) {
       this.centerTitle.style.top = this.pie.origin.y - rect.height / 2 + 'px'
       this.centerTitle.style.left = this.pie.origin.x - rect.width / 2 + 'px'
       this.centerTitle.style.visibility = 'visible'
@@ -253,8 +319,10 @@ export class Dashbord2Component implements OnInit {
       for (let i: number = 0; i < points.length; i++) {
         let point: any = points[i]
         if (point.labelPosition === 'Outside' && point.labelVisible) {
-          let label: HTMLElement = <HTMLElement>document.getElementById(
-            'pie_datalabel_Series_0_text_' + point.index,
+          let label: HTMLElement = <HTMLElement>(
+            document.getElementById(
+              'pie_datalabel_Series_0_text_' + point.index,
+            )
           )
           label.setAttribute('fill', 'black')
         }
@@ -265,8 +333,7 @@ export class Dashbord2Component implements OnInit {
     args.series.dataLabel.font.size = this.getFontSize(
       this.pie?.initialClipRect.width,
     )
-    if(this.pie)
-    this.pie.animateSeries = true
+    if (this.pie) this.pie.animateSeries = true
   }
   getFontSize(width: any): string {
     if (width > 300) {

@@ -1,1 +1,25 @@
-<p>dashbord3 works!</p>
+<div class="control-section">
+  <div class="control-section">
+    <ejs-dashboardlayout id="api_dashboard" #api_dashboard columns="6" [allowResizing]="true"
+      [cellSpacing]='cellSpacing'>
+      <e-panels>
+        <e-panel [sizeX]="3" [sizeY]="3" [row]="0" [col]="0">
+          <ng-template #header>
+            <div>Menu1</div>
+          </ng-template>
+          <ng-template #content>
+            <app-menu1></app-menu1>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="3" [row]="0" [col]="3">
+          <ng-template #header>
+            <div>Menu2</div>
+          </ng-template>
+          <ng-template #content>
+            <app-menu1></app-menu1>
+          </ng-template>
+        </e-panel>
+      </e-panels>
+    </ejs-dashboardlayout>
+  </div>
+</div>

@@ -45,8 +45,8 @@ export class ContentHeaderComponent implements OnInit {
       name:"Dashbord1"
     },
     {
-      id:"/dashbord2",
-      name:"Dashbord3"
+      id:"/dashbord22",
+      name:"Dashbord2"
     },
     {
       id:"/dashbord3",
